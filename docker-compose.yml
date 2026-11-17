@@ -1,0 +1,26 @@
+# Ponte en Pista · demo. Arranque: docker compose up -d --build
+services:
+  app:
+    build: .
+    image: ponte-en-pista:demo
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      DATA_DIR: /data
+      DEFAULT_TENANT: vilaverde
+      MQTT_HOST: mosquitto
+      MQTT_PORT: "1883"
+    volumes:
+      - pista-data:/data
+    depends_on:
+      - mosquitto
+  mosquitto:
+    image: eclipse-mosquitto:2
+    restart: unless-stopped
+    ports:
+      - "${MQTT_PORT_PUBLIC:-1883}:1883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+volumes:
+  pista-data:

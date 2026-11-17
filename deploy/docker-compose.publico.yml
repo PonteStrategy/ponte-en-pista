@@ -1,0 +1,20 @@
+# Despliegue público da demo con HTTPS (Caddy). Require Docker Compose 2.24 ou superior.
+# Uso: docker compose -f docker-compose.yml -f deploy/docker-compose.publico.yml up -d --build
+services:
+  app:
+    ports: !reset []
+  mosquitto:
+    ports: !reset []
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on:
+      - app
+volumes:
+  caddy_data:

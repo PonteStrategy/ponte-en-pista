@@ -1,0 +1,5 @@
+pista.pontestrategy.com {
+    encode gzip
+    reverse_proxy app:8000
+    header -Server
+}

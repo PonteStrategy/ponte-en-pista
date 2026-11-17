@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ponte en Pista</title>
+<meta name="description" content="Plataforma de software libre (AGPL-3.0) para reservar instalacións deportivas municipais e entrar nelas cun QR ou cun botón. Demo do I Certame GOBTEC.">
+<meta name="theme-color" content="#102F61">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<link rel="icon" href="/static/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/static/img/icon.svg">
+<link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar ao contido</a>
+<div class="demo-strip" id="demostrip" role="note"></div>
+<header class="top" id="hdr"></header>
+<main id="main" tabindex="-1"><p>Cargando…</p></main>
+<footer>
+  <p>Ponte en Pista · Software libre <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener">AGPL-3.0</a> (hardware CERN-OHL-S-2.0) · Ponte Strategy, S.L. · I Certame GOBTEC de Software Libre · <a href="/api/docs" target="_blank" rel="noopener">API</a></p>
+  <p class="small">Accesibilidade: obxectivo WCAG 2.1 AA (RD 1112/2018). Navegación por teclado, contraste e galego/castelán.</p>
+</footer>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<script src="/static/js/app.js"></script>
+<script src="/static/js/i18n.js"></script>
+<script src="/static/js/views-public.js"></script>
+<script src="/static/js/views-user.js"></script>
+<script src="/static/js/views-staff.js"></script>
+<script>PEP.boot();</script>
+</body>
+</html>
